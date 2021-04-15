@@ -1,5 +1,5 @@
 import React from "react";
-import WebRTC from "./WebRTC";
+import WebRTC from "./View/WebRTC";
 
 function App() {
   return (
