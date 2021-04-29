@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { createRoom } from "../controller/roomController";
 export const CameraBtn = ({ setCamOn, setMicOn }) => {
   const [text, setText] = useState("카메라,마이크 허용");
   const onBtnClick: React.MouseEventHandler = async (): Promise<void> => {
@@ -28,12 +28,13 @@ export const CreateRoomBtn = ({
   roomId: string;
   setJoinIn: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const onBtnClick: React.MouseEventHandler = (
+  const onBtnClick: React.MouseEventHandler = async (
     event: React.MouseEvent<Element, MouseEvent>
-  ): void => {
+  ): Promise<void> => {
     console.log(event.currentTarget.id);
     console.log(roomId);
     setJoinIn(true);
+    await createRoom();
     // setRoomId
     // save RoomId in firestore
     // etc
