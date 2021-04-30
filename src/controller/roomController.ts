@@ -1,8 +1,10 @@
 import { firestore } from "./fbConfig";
 
 export const createRoom = async () => {
-  const data = await firestore.collection("Test").doc("test");
+  const response = firestore.collection("Test");
 
-  console.log(await data.get());
-  console.log();
+  const data = await response.get();
+  data.docs.forEach(item => {
+    console.log(item.data());
+  });
 };
