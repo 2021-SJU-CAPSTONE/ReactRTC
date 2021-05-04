@@ -1,10 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import WebRTC from "./View/WebRTC";
+import App from "./App";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <WebRTC />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root") as HTMLElement);
